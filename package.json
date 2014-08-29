@@ -1,0 +1,26 @@
+{
+    "name": "hexo-site",
+    "version": "2.8.2",
+    "private": true,
+    "dependencies": {
+        "hexo-renderer-ejs": "*",
+        "hexo-renderer-stylus": "*",
+        "hexo-renderer-marked": "*"
+    },
+    "devDependencies": {
+        "gulp": "*",
+        "gulp-concat": "*",
+        "gulp-uglify": "*",
+        "gulp-minify-css": "*",
+        "gulp-newer": "*",
+        "gulp-resolve-dependencies": "*",
+        "gulp-autoprefixer": "*",
+        "gulp-htmlmin": "*",
+        "gulp-prettify": "*",
+        "del": "*"
+    },
+    "bin": {
+        "build": "build.js",
+        "deploy": "deploy.js"
+    }
+}

@@ -1,0 +1,33 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>">
+    <div class="article-inner">
+        <header class="article-header">
+            <h1 class="article-title"><a href="<%- url_for(post.path) %>" target="_blank"><%= post.title %></a></h1>
+        </header>
+        <div class="article-meta">
+            <p class="article-date"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, null) %></time></p>
+        </div>
+        <% if (post.photos && post.photos.length){ %>
+            <div class="article-gallery">
+                <div class="article-gallery-photos">
+                <% post.photos.forEach(function(photo, i){ %>
+                    <a class="article-gallery-img" href="<%- url_for(photo) %>" rel="gallery_<%= post._id %>">
+                        <img src="<%- url_for(photo) %>">
+                    </a>
+                <% }) %>
+                </div>
+            </div>
+        <% } %>
+        <% if (isHome) { %>
+            <div class="article-entry">
+                <%- post.excerpt %>
+            </div>
+            <footer class="article-footer">
+                <a href="<%- url_for(post.path) %>" class="article-more-link" target="_blank">Read More</a>
+            </footer>
+        <% } else { %>
+            <div class="article-entry">
+                <%- post.content %>
+            </div>
+        <% } %>
+    </div>
+</article>
