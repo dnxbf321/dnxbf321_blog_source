@@ -1,10 +1,8 @@
 {
-  "name": "hexo-site",
+  "name": "dnxbf321_blog_source",
   "version": "0.0.1",
   "private": true,
-  "name": "dnxbf321_blog_source",
   "description": "dnxbf321.github.io source",
-  "version": "0.0.1",
   "homepage": "https://github.com/dnxbf321/dnxbf321_blog_source",
   "repository": {
     "type": "git",
@@ -20,16 +18,18 @@
     "url": "https://github.com/dnxbf321"
   },
   "hexo": {
-    "version": ""
+    "version": "3.0.0"
   },
   "dependencies": {
     "hexo": "^3.0.0",
+    "hexo-deployer-git": "0.0.3",
     "hexo-generator-archive": "^0.1.0",
     "hexo-generator-category": "^0.1.0",
     "hexo-generator-index": "^0.1.0",
     "hexo-generator-tag": "^0.1.0",
-    "hexo-renderer-stylus": "^0.2.0",
+    "hexo-renderer-ejs": "^0.1.0",
     "hexo-renderer-marked": "^0.2.4",
+    "hexo-renderer-stylus": "^0.2.0",
     "hexo-server": "^0.1.2"
   },
   "license": "ALL SERVERED"

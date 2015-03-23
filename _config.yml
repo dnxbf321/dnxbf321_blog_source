@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: 四面的博客
+subtitle: 做一枚有用的前端工程师
+description: 在前端的道路上砥砺前行，Just do IT
+author: Jason Tung
+language: zh-cn
+timezone: GMT+0800
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://dnxbf321.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -62,9 +62,12 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: light
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/dnxbf321/dnxbf321.github.io.git
+  branch: master
+  message: hexo generate again
