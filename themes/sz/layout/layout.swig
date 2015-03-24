@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="description" content="{{ config.description }}"/>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
 
     {% block stylesheet %}
         <link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">

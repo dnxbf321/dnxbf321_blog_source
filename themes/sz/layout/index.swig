@@ -1,1 +1,3 @@
-{% include '_partial/archive.swig' %}
+{% block body %}
+    {% include '_partial/archive.swig' %}
+{% endblock %}
