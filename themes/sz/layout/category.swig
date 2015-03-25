@@ -1,1 +1,1 @@
-category.swig
+{% extends 'layout.swig' %}

@@ -1,1 +1,1 @@
-page.swig
+{% extends 'layout.swig' %}

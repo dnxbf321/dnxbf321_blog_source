@@ -1,1 +1,1 @@
-post.swig
+{% extends 'layout.swig' %}

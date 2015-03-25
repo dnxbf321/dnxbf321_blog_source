@@ -1,3 +1,9 @@
-{% block body %}
-    {% include '_partial/archive.swig' %}
+{% raw %}
+
+{% extends 'layout.swig' %}
+
+{% block primary %}
+    111
 {% endblock %}
+
+{% endraw %}
