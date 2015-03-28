@@ -1,26 +1,17 @@
-# Header
 menu:
   Home: /
   Archives: /archives
-  About: /about
 
-# Content
+widgets:
+- search
+- category
+- tag
+
 excerpt_link: Read More
 
-# Sidebar
-sidebar: right
-widgets:
-- archive
+addthis:
+  enable: false
 
-# Contacts
-contacts:
-  email: dnxbf321@gmail.com
+fancybox: true
 
-# Links
-links:
-  Hexo: http://hexo.io
-  github: https://github.com/dnxbf321
-
-# Miscellaneous
 google_analytics:
-favicon: /favicon.png

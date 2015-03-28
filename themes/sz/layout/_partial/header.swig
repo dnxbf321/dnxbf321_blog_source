@@ -1,9 +1,15 @@
-<header id="site">
-	<a href="/" class="favicon">
-		<img src="/img/logo.png">
-	</a>
-	<div class="title">
-		<h1>{{ config.title }}</h1>
-		<h2>{{ config.subtitle }}</h2>
+<header id="header" class="inner">
+	<div id="home" class="f-left">
+		<h1><a href="{{ config.root }}">{{ config.title }}</a></h1>
+		{% if config.subtitle %}
+		<h2><a href="{{ config.root }}">{{ config.subtitle }}</a></h2>
+		{{ endif }}
 	</div>
+	<nav id="main-nav" class="f-right">
+		<ul class="clearfix">
+			{% for menu in theme.menu %}
+			<li><a href="{{ menu }}">{{ loop.key }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
 </header>

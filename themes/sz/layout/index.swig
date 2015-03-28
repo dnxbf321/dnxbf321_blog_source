@@ -1,9 +1,12 @@
-{% raw %}
-
-{% extends 'layout.swig' %}
+{% extends 'ancestor.swig' %}
 
 {% block primary %}
-    111
-{% endblock %}
 
-{% endraw %}
+{% for post in page.posts %}
+{% set pipe = {item: post, index: true} %}
+{% include '_partial/article.swig' with pipe %}
+{% endfor %}
+
+{% include '_partial/pagination.swig' %}
+
+{% endblock %}

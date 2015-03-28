@@ -1,5 +1,10 @@
-<footer id="contact">
-	<div class="copyright">
-		&copy; 2015 四面的博客 &nbsp;&nbsp; All rights reserved
+<footer id="footer" class="inner clearfix">
+	<div class="f-left">
+		&copy; {{ moment(Date.now()).format('YYYY') }}
+		{% if config.author %}
+		{{ config.author }}
+		{% else %}
+		{{ config.title }}
+		{% endif %}
 	</div>
 </footer>

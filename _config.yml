@@ -8,7 +8,7 @@ subtitle: 做一枚有用的前端工程师
 description: 在前端的道路上砥砺前行，Just do IT
 author: Jason Tung
 language: zh-cn
-timezone: GMT+0800
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
