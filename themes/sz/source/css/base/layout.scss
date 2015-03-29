@@ -1,0 +1,73 @@
+body {
+  background: $color-background;
+  color: $color-font;
+  font: {
+    family: $font-default;
+    size: 14px;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  body {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  text-shadow: 0 0 1px transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.inner {
+  display: flex;
+  margin: 0 auto;
+  .f-left {
+    flex: 1;
+  }
+  .f-right {
+    width: 270px;
+  }
+}
+
+#main-col {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  #main-col {
+    margin-right: 0;
+  }
+}

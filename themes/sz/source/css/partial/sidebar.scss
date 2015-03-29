@@ -1,0 +1,91 @@
+#sidebar {
+  float: none;
+
+  .widget {
+    background: #fff;
+    box-shadow: 1px 2px 3px #ddd;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    .title {
+      border-bottom: 1px solid $color-border;
+      font-size: 1em;
+      font-weight: normal;
+      padding: 15px 20px;
+    }
+    .entry {
+      font-size: 0.9em;
+      line-height: 1.5;
+      padding: 15px 20px;
+    }
+    ul, ol, dl {
+      list-style: none;
+      ul, ol, dl {
+        list-style: disc;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .search {
+    margin-bottom: 30px;
+    input {
+      background: #fff;
+      border: 1px solid $color-border;
+      box-sizing: border-box;
+      color: $color-meta;
+      font-size: 1em;
+      padding: 10px 15px 10px 3px;
+      width: 100%;
+      &:focus {
+        color: $color-font;
+      }
+    }
+  }
+
+  .tag {
+    small {
+      color: $color-meta;
+      margin-left: 15px;
+      &::before {
+        content: '(';
+        padding-right: 3px;
+      }
+      &::after {
+        content: ')';
+        padding-left: 3px;
+      }
+    }
+  }
+  .twitter {
+    li {
+      border-bottom: 1px solid $color-border;
+      font-size: 0.9em;
+      padding: 15px 20px;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    small {
+      color: $color-meta;
+      display: block;
+      line-height: 1;
+      margin-top: 10px;
+    }
+  }
+  .tagcloud {
+    .entry {
+      padding-right: 5px;
+    }
+    a {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #sidebar {
+    line-height: 1.8em;
+    width: 100%;
+  }
+}

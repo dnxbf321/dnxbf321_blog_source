@@ -1,10 +1,8 @@
-<footer id="footer" class="inner clearfix">
-	<div class="f-left">
+<footer id="footer" class="inner">
 		&copy; {{ moment(Date.now()).format('YYYY') }}
 		{% if config.author %}
 		{{ config.author }}
 		{% else %}
 		{{ config.title }}
 		{% endif %}
-	</div>
 </footer>

@@ -10,6 +10,7 @@
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 	{% block stylesheet %}
+	<link rel="stylesheet" href="/bower_components/normalize.css/normalize.css"/>
 	<link rel="stylesheet" href="/css/style.css">
 	{% endblock %}
 
@@ -18,7 +19,7 @@
 <body>
 {% include '_partial/header.swig' %}
 
-<div id="content" class="inner clearfix">
+<div id="content" class="inner">
 	<div id="main-col" class="f-left">
 		<div id="wrapper">{% block primary %}{% endblock %}</div>
 	</div>
