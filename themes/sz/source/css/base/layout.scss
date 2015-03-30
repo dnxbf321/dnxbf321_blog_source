@@ -1,20 +1,12 @@
 body {
   background: $color-background;
   color: $color-font;
+  margin: auto;
+  max-width: $wide-width;
   font: {
     family: $font-default;
     size: 14px;
   }
-}
-
-@media screen and (max-width: 1260px) {
-  body {
-    margin: 0 30px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  text-shadow: 0 0 1px transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,8 +58,26 @@ a {
   margin-right: 30px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $wide-width + 60) {
+  body {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: $normal-width) {
+  .inner {
+    display: inherit;
+    .f-right {
+      width: auto;
+    }
+  }
   #main-col {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: $phone-width) {
+  body {
+    margin: 0 10px;
   }
 }

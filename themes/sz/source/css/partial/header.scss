@@ -1,5 +1,6 @@
 #header {
   display: flex;
+  align-items: flex-end;
 
   > * {
     margin-bottom: 30px;
@@ -20,35 +21,35 @@
   }
 
   h2 {
-    font-size: 0.9em;
+    font-size: 14px;
     font-weight: normal;
-    line-height: 1;
-    margin-top: 10px;
+    line-height: 20px;
+    margin: 0;
   }
 
   #main-nav {
     font-family: $font-title;
-    line-height: 2.5em;
-    margin: 50px auto 20px;
+    font-size: 16px;
+    line-height: 20px;
     width: auto;
-  }
-
-  ul {
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 30px;
-      margin-right: 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        margin: 0 0 0 30px;
+        padding: 0;
+      }
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $phone-width) {
   #header {
-    text-shadow: 0 0 1px #fff;
+    display: inherit;
     #main-nav ul li {
-      margin-right: 30px;
-      margin-left: 0;
+      margin: 0 30px 0 0;
     }
   }
 }

@@ -1,12 +1,12 @@
 $icon-size: 32px;
-$icon-gap: 25px;
+$box-padding: 20px;
+$box-padding-s: 10px;
 
 article {
   background: #fff;
   box-shadow: 1px 2px 3px #ddd;
   position: relative;
   &.page {
-    padding-left: 20px;
     .icon {
       display: none;
     }
@@ -46,7 +46,7 @@ article {
   }
   .post-content {
     margin-bottom: 50px;
-    padding: 20px 20px 20px ($icon-size + $icon-gap + 20);
+    padding: $box-padding $box-padding $box-padding ($icon-size + 2 * $box-padding);
   }
   .gallery {
     overflow: hidden;
@@ -105,10 +105,9 @@ article {
     .icon {
       color: $color-link;
       height: $icon-size;
-      left: 20px;
-      margin-right: $icon-gap;
+      left: $box-padding;
       position: absolute;
-      top: 20px;
+      top: $box-padding;
       &::before {
         font: 32px $font-icon;
         left: 0;
@@ -326,8 +325,14 @@ article {
   }
 }
 
-@media screen and (max-width: 600px) {
-  article .post-content {
-    position: relative;
+@media screen and (max-width: $phone-width) {
+  article {
+    .post-content {
+      padding: $box-padding-s $box-padding-s $box-padding-s ($icon-size + 2 * $box-padding-s);
+    }
+    header .icon {
+      top: $box-padding-s;
+      left: $box-padding-s;
+    }
   }
 }
