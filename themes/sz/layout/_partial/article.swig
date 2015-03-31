@@ -20,20 +20,19 @@
 		</div>
 		<footer class="clearfix">
 			{% if index %}
-			{% if item.excerpt %}
-			<div class="f-left">
-				<a href="{{ url_for(item.path) }}#more" class="more-link">{{ theme.excerpt_link }}</a>
-			</div>
+				{% if item.excerpt %}
+				<div class="f-left">
+					<a href="{{ url_for(item.path) }}#more" class="more-link">{{ theme.excerpt_link }}</a>
+				</div>
+				{% endif %}
+				{% if item.comment && config.disqus_shortname %}
+				<div class="f-right">
+					<a href="{{ item.permalink }}#disqus_thread" class="comment-link">Comments</a>
+				</div>
+				{% endif %}
 			{% endif %}
-			{% if item.comment && config.disqus_shortname %}
-			<div class="f-right">
-				<a href="{{ item.permalink }}#disqus_thread" class="comment-link">Comments</a>
-			</div>
-			{% endif %}
-			{% else %}
 			{% include 'post/category.swig' %}
 			{% include 'post/tag.swig' %}
-			{% endif %}
 		</footer>
 	</div>
 </article>

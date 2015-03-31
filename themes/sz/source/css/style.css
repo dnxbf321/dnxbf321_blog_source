@@ -11,6 +11,7 @@ body {
   color: #444;
   margin: auto;
   max-width: 1200px;
+  min-width: 300px;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-size: 14px; }
 
@@ -297,14 +298,11 @@ article {
     padding-top: 10px;
     position: relative; }
     article footer a {
-      color: #999; }
-      article footer a::hover {
+      color: #999;
+      padding-right: 1em; }
+      article footer a:hover {
         color: #258fb8;
         text-decoration: none; }
-      article footer a::before {
-        font: 1.1em FontAwesome;
-        padding-right: 10px;
-        vertical-align: middle; }
       article footer a.more-link::before {
         content: '\f054'; }
       article footer a.comment-link::before {
@@ -331,7 +329,8 @@ article {
 
 @media screen and (max-width: 500px) {
   article .post-content {
-    padding: 10px 10px 10px 52px; }
+    padding: 10px 10px 10px 52px;
+    margin-bottom: 20px; }
   article header .icon {
     top: 10px;
     left: 10px; } }
@@ -412,18 +411,16 @@ article {
       #sidebar .widget ul ul, #sidebar .widget ul ol, #sidebar .widget ul dl, #sidebar .widget ol ul, #sidebar .widget ol ol, #sidebar .widget ol dl, #sidebar .widget dl ul, #sidebar .widget dl ol, #sidebar .widget dl dl {
         list-style: disc;
         margin-left: 20px; }
-  #sidebar .search {
-    margin-bottom: 30px; }
-    #sidebar .search input {
-      background: #fff;
-      border: 1px solid #ddd;
-      box-sizing: border-box;
-      color: #999;
-      font-size: 1em;
-      padding: 10px 15px 10px 3px;
-      width: 100%; }
-      #sidebar .search input:focus {
-        color: #444; }
+  #sidebar .search input {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    color: #999;
+    font-size: 1em;
+    padding: 10px 15px 10px 3px;
+    width: 100%; }
+    #sidebar .search input:focus {
+      color: #444; }
   #sidebar .tag small {
     color: #999;
     margin-left: 15px; }
@@ -450,10 +447,13 @@ article {
     display: inline-block;
     margin-right: 10px; }
 
+@media screen and (max-width: 500px) {
+  #sidebar .widget {
+    margin-bottom: 10px; } }
 #footer {
   color: #999;
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
-  margin-bottom: 50px;
+  margin: 30px 0 50px;
   text-shadow: 0 0 1px #fff; }
 
 .entry .gist {

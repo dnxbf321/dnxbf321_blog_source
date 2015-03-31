@@ -207,7 +207,7 @@ article {
       line-height: 1;
       margin-top: 30px;
     }
-    
+
     h3, h4, h5, h6 {
       font-weight: normal
     }
@@ -274,14 +274,10 @@ article {
     position: relative;
     a {
       color: $color-meta;
-      &::hover {
+      padding-right: 1em;
+      &:hover {
         color: $color-link;
         text-decoration: none;
-      }
-      &::before {
-        font: 1.1em $font-icon;
-        padding-right: 10px;
-        vertical-align: middle;
       }
       &.more-link {
         &::before {
@@ -330,6 +326,7 @@ article {
   article {
     .post-content {
       padding: $box-padding-s $box-padding-s $box-padding-s ($icon-size + 2 * $box-padding-s);
+      margin-bottom: 20px;
     }
     header .icon {
       top: $box-padding-s;

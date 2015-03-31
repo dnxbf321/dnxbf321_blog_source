@@ -3,6 +3,7 @@ body {
   color: $color-font;
   margin: auto;
   max-width: $wide-width;
+  min-width: 300px;
   font: {
     family: $font-default;
     size: 14px;

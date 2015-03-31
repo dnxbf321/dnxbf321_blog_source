@@ -29,7 +29,6 @@
   }
 
   .search {
-    margin-bottom: 30px;
     input {
       background: #fff;
       border: 1px solid $color-border;
@@ -81,6 +80,13 @@
     a {
       display: inline-block;
       margin-right: 10px;
+    }
+  }
+}
+@media screen and (max-width: $phone-width) {
+  #sidebar {
+    .widget {
+      margin-bottom: 10px;
     }
   }
 }
