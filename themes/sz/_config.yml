@@ -1,6 +1,6 @@
 menu:
-  Home: /
-  Archives: /archives
+  home: /
+  archive: /archives
 
 widgets:
 - search
@@ -9,9 +9,9 @@ widgets:
 
 excerpt_link: Read More
 
-addthis:
-  enable: false
-
 fancybox: true
+
+comment:
+  enable: false
 
 google_analytics:

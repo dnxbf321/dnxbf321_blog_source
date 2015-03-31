@@ -400,10 +400,12 @@ article {
       border-bottom: 1px solid #ddd;
       font-size: 1em;
       font-weight: normal;
+      margin: 0;
       padding: 15px 20px; }
     #sidebar .widget .entry {
       font-size: 0.9em;
       line-height: 1.5;
+      margin: 0;
       padding: 15px 20px; }
     #sidebar .widget ul, #sidebar .widget ol, #sidebar .widget dl {
       list-style: none; }

@@ -1,6 +1,6 @@
-{% if page.comments %}
+{% if theme.comment.enable && page.comments %}
 <section id="comment">
-	<h1 class="title">评论</h1>
+	<h1 class="title">{{ __('comment') }}</h1>
 	{% if config.disqus_shortname %}
 	<div id="disqus_thread"></div>
 	{% endif %}

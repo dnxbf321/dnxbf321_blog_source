@@ -8,7 +8,7 @@
 	<nav id="main-nav" class="f-right">
 		<ul class="clearfix">
 			{% for menu in theme.menu %}
-			<li><a href="{{ menu }}">{{ loop.key }}</a></li>
+			<li><a href="{{ menu }}">{{ __(loop.key) }}</a></li>
 			{% endfor %}
 		</ul>
 	</nav>

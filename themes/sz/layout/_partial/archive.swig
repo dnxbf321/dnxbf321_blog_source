@@ -7,7 +7,7 @@
 {% elseif page.archive && page.year%}
 <h2 class="archive-title">{{ page.year }}</h2>
 {% else %}
-<h2 class="archive-title">归档</h2>
+<h2 class="archive-title">{{ __('archive') }}</h2>
 {% endif %}
 
 {% if pagination == 2 %}
