@@ -196,17 +196,18 @@ article {
     }
     ul, ol, dl {
       margin-left: 20px;
+      padding: 0;
       ul, ol, dl {
         margin-top: 0
       }
     }
 
     h1, h2 {
-      border-bottom: 1px solid $color-border;
       font-weight: normal;
-      margin-top: 20px;
-      padding-bottom: 10px;
+      line-height: 1;
+      margin-top: 30px;
     }
+    
     h3, h4, h5, h6 {
       font-weight: normal
     }

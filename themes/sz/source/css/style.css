@@ -237,14 +237,14 @@ article {
         margin: 0;
         padding: 0; }
     article .entry ul, article .entry ol, article .entry dl {
-      margin-left: 20px; }
+      margin-left: 20px;
+      padding: 0; }
       article .entry ul ul, article .entry ul ol, article .entry ul dl, article .entry ol ul, article .entry ol ol, article .entry ol dl, article .entry dl ul, article .entry dl ol, article .entry dl dl {
         margin-top: 0; }
     article .entry h1, article .entry h2 {
-      border-bottom: 1px solid #ddd;
       font-weight: normal;
-      margin-top: 20px;
-      padding-bottom: 10px; }
+      line-height: 1;
+      margin-top: 30px; }
     article .entry h3, article .entry h4, article .entry h5, article .entry h6 {
       font-weight: normal; }
     article .entry img, article .entry video {
