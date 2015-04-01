@@ -25,9 +25,11 @@
 	<article class="{{ item.layout }}">
 		<div class="post-content">
 			<header>
-				<div class="icon"></div>
-				<time datetime="{{ item.date.toDate().toISOString() }}"><a href="{{ url_for(item.path) }}">{{
-					item.date.format(config.date_format) }}</a></time>
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="{{ item.date.toDate().toISOString() }}"><a href="{{ url_for(item.path) }}">{{
+						item.date.format(config.date_format) }}</a></time>
+				</div>
 				{% if item.link %}
 				{% if item.title %}
 				<h1 class="title link"><a href="{{ url_for(item.link) }}" target="_blank">{{ item.title }}</a></h1>

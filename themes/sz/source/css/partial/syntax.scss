@@ -1,34 +1,32 @@
 .entry {
   .gist {
-    background: #eee;
+    overflow: auto;
+    margin-top: 15px;
+    padding: 7px 15px;
     border: 1px solid $color-border;
     border-radius: 2px;
+    background: #eee;
     color: #666;
     line-height: 1.6;
-    margin-top: 15px;
-    overflow: auto;
-    padding: 7px 15px;
-    text-shadow: 0 0 1px #fff;
     .gist-file {
-      border: none;
-      font-family: inherit;
-      font-size: 0.9em;
       margin: 0;
+      border: none;
+      font-size: 0.9em;
+      font-family: inherit;
       .gist-data {
-        background: none;
         border-bottom: none;
+        background: none;
         pre {
-          font-family: font-mono;
           padding: 0 !important;
+          font-family: font-mono;
         }
       }
       .gist-meta {
+        margin-top: 5px;
+        padding: 0;
         background: none;
         color: $color-meta;
         font-size: 100%;
-        margin-top: 5px;
-        padding: 0;
-        text-shadow: 0 0 1px #fff;
         a {
           color: $color-link;
           &:visited {
@@ -41,20 +39,16 @@
   figure {
     margin: 0;
     &.highlight {
-      background: #eee;
+      position: relative;
+      margin-top: 15px;
+      padding: 7px 15px;
       border: 1px solid $color-border;
       border-radius: 2px;
-      font-size: 0.9em;
-      line-height: 1.6;
-      margin-top: 15px;
-      overflow: auto;
-      padding: 7px 15px;
-      position: relative;
-      text-shadow: 0 0 1px #fff;
+      background: #eee;
+      line-height: 2;
       figcaption {
-        color: $color-meta;
         margin-bottom: 5px;
-        text-shadow: 0 0 1px #fff;
+        color: $color-meta;
         a {
           position: absolute;
           right: 15px;
@@ -62,29 +56,29 @@
       }
     }
     pre {
-      border: none;
       margin: 0;
       padding: 0;
+      border: none;
     }
 
     table {
-      border-spacing: 0;
       margin-top: 0;
+      border-spacing: 0;
     }
 
     .gutter {
+      padding-right: 15px;
       border-right: 1px solid $color-border;
       color: $color-meta;
-      padding-right: 15px;
       text-align: right;
     }
     .code {
-      border-left: 1px solid #fff;
-      color: #666;
       padding-left: 15px;
+      border-left: 1px solid #fff;
+      color: #2E2E2E;
     }
     .line {
-      height: 20px;
+      line-height: 20px;
     }
   }
   pre {
@@ -93,6 +87,7 @@
     .comment, .template_comment, .diff .header, .doctype, .pi, .lisp .string, .javadoc {
       color: #93a1a1;
       font-style: italic;
+      font-family: $font-serif;
     }
 
     .keyword,
@@ -103,7 +98,7 @@
     .request,
     .status,
     .nginx .title {
-      color: #859900
+      color: #E5E959
     }
 
     .number,
@@ -114,7 +109,7 @@
     .tex .formula,
     .regexp,
     .hexcolor {
-      color: #2aa198;
+      color: #00AF3C;
     }
 
     .title,
@@ -126,7 +121,7 @@
     .vhdl,
     .literal,
     .id {
-      color: #268bd2;
+      color: #27928F;
     }
 
     .attribute,
@@ -137,7 +132,7 @@
     .class .title,
     .parent,
     .haskell .type {
-      color: #b58900
+      color: #0E0F24;
     }
 
     .preprocessor,
@@ -152,11 +147,11 @@
     .subst,
     .cdata,
     .clojure .title {
-      color: #cb4b16;
+      color: #8E3539;
     }
 
     .deletion {
-      color: #dc322f;
+      color: #DA0C30;
     }
   }
 }

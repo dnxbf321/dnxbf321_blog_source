@@ -30,7 +30,6 @@
 	-webkit-border-radius: 4px;
 	color: #444;
 	position: relative;
-	text-shadow: none;
 }
 
 .fancybox-opened {
@@ -202,7 +201,6 @@
 .fancybox-title {
 	font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	position: relative;
-	text-shadow: none;
 	visibility: hidden;
 	z-index: 8050;
 }
@@ -232,7 +230,6 @@
 	line-height: 24px;
 	margin-right: -100%;
 	padding: 2px 20px;
-	text-shadow: 0 1px 2px #222;
 	white-space: nowrap;
 }
 

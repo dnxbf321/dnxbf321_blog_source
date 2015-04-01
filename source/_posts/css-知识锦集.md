@@ -74,7 +74,7 @@ css3
 很像绝对定位有木有
 
 ## 关闭 spell check
-表单添加属性 spellcheck=“false”，跟恼人的红色虚线说不
+表单添加属性 spellcheck="false"，跟恼人的红色虚线说不
 
 ## rem
 [web app 变革之 rem](http://isux.tencent.com/web-app-rem.html "web app 变革之 rem")

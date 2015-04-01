@@ -2,75 +2,72 @@
   float: none;
 
   .widget {
+    margin-bottom: 2em;
     background: #fff;
     box-shadow: 1px 2px 3px #ddd;
-    margin-bottom: 30px;
     word-wrap: break-word;
     .title {
-      border-bottom: 1px solid $color-border;
-      font-size: 1em;
-      font-weight: normal;
       margin: 0;
-      padding: 15px 20px;
+      padding: 10px 20px;
+      border-bottom: 1px solid $color-border;
+      font-weight: normal;
+      font-size: 16px;
     }
     .entry {
-      font-size: 0.9em;
-      line-height: 1.5;
       margin: 0;
       padding: 15px 20px;
+      font-size: 14px;
+      line-height: 1.5;
     }
     ul, ol, dl {
       list-style: none;
       ul, ol, dl {
-        list-style: disc;
         margin-left: 20px;
+        list-style: disc;
       }
     }
   }
 
   .search {
     input {
-      background: #fff;
-      border: 1px solid $color-border;
       box-sizing: border-box;
-      color: $color-meta;
-      font-size: 1em;
       padding: 10px 15px 10px 3px;
       width: 100%;
-      &:focus {
-        color: $color-font;
-      }
+      border: 1px solid $color-border;
+      background: #fff;
+      color: $color-meta;
+      font-size: 14px;
     }
   }
 
   .tag {
     small {
+      margin-left: 2px;
       color: $color-meta;
-      margin-left: 15px;
       &::before {
+        padding-right: 2px;
         content: '(';
-        padding-right: 3px;
       }
       &::after {
+        padding-left: 2px;
         content: ')';
-        padding-left: 3px;
       }
     }
   }
   .twitter {
     li {
-      border-bottom: 1px solid $color-border;
-      font-size: 0.9em;
       padding: 15px 20px;
+      border-bottom: 1px solid $color-border;
+      font-size: 75%;
       &:last-child {
         border-bottom: none;
       }
     }
     small {
-      color: $color-meta;
       display: block;
-      line-height: 1;
       margin-top: 10px;
+      color: $color-meta;
+      line-height: 1;
     }
   }
   .tagcloud {
@@ -83,7 +80,8 @@
     }
   }
 }
-@media screen and (max-width: $phone-width) {
+
+@media screen and (max-width: $width-phone) {
   #sidebar {
     .widget {
       margin-bottom: 10px;

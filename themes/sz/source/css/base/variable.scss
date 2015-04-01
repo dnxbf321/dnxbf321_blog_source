@@ -7,20 +7,22 @@ $font-icon-path: 'font/fontawesome-webfont';
 }
 
 // Color
-$color-background: #eee;
-$color-font: #444;
-$color-meta: #999;
-$color-border: #ddd;
-$color-link: #258fb8;
+$color-background: #fff;
+$color-font: #0D0000;
+$color-meta: #4E5359;
+$color-border: #7C848C;
+$color-link: #63AAFF;
+$color-link-hover: #000;
 
 // Font
-$font-default: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-$font-serif: "Georgia", serif;
-$font-mono: Monaco, Menlo, Consolas, Courier New, monospace;
-$font-title: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-default: "Microsoft Yahei", sans-serif;
+$font-serif: serif;
+$font-mono: Monaco, Menlo, Consolas, "Courier New", monospace;
 $font-icon: FontAwesome;
 
 // Width
-$wide-width: 1200px;
-$normal-width: 768px; /* 1366 * 768 */
-$phone-width: 500px; /* iPhone 6+ 414px */
+$width-wide: 1200px;
+/* 1366 * 768 */
+$width-normal: 768px;
+/* iPhone 6+ 414px */
+$width-phone: 500px;

@@ -5,9 +5,11 @@
 	<div class="post-content">
 		<header>
 			{% if item.layout != 'page' %}
-			<div class="icon"></div>
-			<time datetime="{{ item.date.toDate().toISOString() }}"><a href="{{ url_for(item.path) }}">{{
-				item.date.format(config.date_format) }}</a></time>
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="{{ item.date.toDate().toISOString() }}"><a href="{{ url_for(item.path) }}">{{
+						item.date.format(config.date_format) }}</a></time>
+				</div>
 			{% endif %}
 			{% include 'post/title.swig' %}
 		</header>

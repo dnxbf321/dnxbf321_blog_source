@@ -19,11 +19,13 @@
 <body>
 {% include '_partial/header.swig' %}
 
-<div id="content" class="inner">
-	<div id="main-col" class="f-left">
-		<div id="wrapper">{% block primary %}{% endblock %}</div>
+<div id="content">
+	<div class="center">
+		<div class="main-col">
+			{% block primary %}{% endblock %}
+		</div>
+		{% block extends %}{% endblock %}
 	</div>
-	<aside id="sidebar" class="f-right">{% include '_partial/sidebar.swig' %}</aside>
 </div>
 
 {% include '_partial/footer.swig' %}
