@@ -97,10 +97,6 @@ article {
     }
   }
 
-  .post-content {
-    border-bottom: 1px solid $color-border;
-  }
-
   header {
     .meta {
       overflow: hidden;
@@ -145,6 +141,7 @@ article {
   }
 
   .entry {
+    margin-bottom: 15px;
     padding-left: 30px;
     border-top: 1px solid $color-border;
     line-height: 2;
@@ -273,6 +270,14 @@ article {
       border: none;
       text-align: left;
       font-size: 1.5em;
+    }
+
+    table {
+      border-collapse: collapse;
+      td {
+        border: 1px solid $color-border;
+        padding: 2px 10px;
+      }
     }
   }
 

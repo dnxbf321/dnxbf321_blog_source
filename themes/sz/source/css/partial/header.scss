@@ -1,3 +1,5 @@
+$margin: 15px;
+
 #header {
   position: fixed;
   top: 0;
@@ -8,7 +10,14 @@
   background: $color-background;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   .center {
-    overflow: hidden;
+    .wrap {
+      display: table;
+      width: 100%;
+      > * {
+        display: table-cell;
+        vertical-align: bottom;
+      }
+    }
     a {
       color: inherit;
     }
@@ -16,19 +25,21 @@
 }
 
 #site {
-  float: left;
+  h1 {
+    margin: $margin 0;
+  }
   h2 {
-    margin: 15px 0;
+    margin: $margin 0;
     font-size: 14px;
   }
 }
 
 #menu {
-  float: right;
-  margin-top: 57px;
+  overflow: hidden;
   ul {
+    float: right;
     overflow: hidden;
-    margin: 15px 0;
+    margin: $margin 0;
     padding: 0;
     list-style: none;
     li {
@@ -44,13 +55,23 @@
   }
 }
 
+#header.small {
+  padding: 0;
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    display: none;
+  }
+}
+
 @media screen and (max-width: $width-phone) {
   #header {
     padding-bottom: 10px;
     position: absolute;
   }
   #site, #menu {
-    float: none;
+    display: block !important;
   }
   #site {
     h1 {
@@ -58,8 +79,9 @@
     }
   }
   #menu {
-    margin-top: 30px;
+    margin-top: 15px;
     ul {
+      float: none;
       li {
         margin-left: 0;
         margin-right: 30px;

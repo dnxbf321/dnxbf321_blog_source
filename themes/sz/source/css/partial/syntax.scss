@@ -64,16 +64,19 @@
     table {
       margin-top: 0;
       border-spacing: 0;
+      td {
+        border: none;
+      }
     }
 
     .gutter {
-      padding-right: 15px;
+      padding: 0 15px 0 0;
       border-right: 1px solid $color-border;
       color: $color-meta;
       text-align: right;
     }
     .code {
-      padding-left: 15px;
+      padding: 0 0 0 15px;
       border-left: 1px solid #fff;
       color: #2E2E2E;
     }

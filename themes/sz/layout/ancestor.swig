@@ -36,6 +36,20 @@
 <script src="/js/gallery.js"></script>
 {% endblock %}
 
+<script>
+	/* #header特效 */
+	(function() {
+		var $header = $('#header');
+		$(window).on('scroll', function() {
+			if (window.scrollY > 100) {
+				$header.addClass('small');
+			} else {
+				$header.removeClass('small');
+			}
+		});
+	}());
+</script>
+
 {% if config.disqus_shortname %}
 <script>
 	(function (disqus_shortname, commentEnabled) {
