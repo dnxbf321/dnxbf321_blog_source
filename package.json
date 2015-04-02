@@ -33,8 +33,6 @@
   "license": "ALL SERVERED",
   "devDependencies": {
     "autoprefixer-core": "^5.1.8",
-    "clean-css": "^3.1.8",
-    "html-minifier": "^0.7.0",
-    "uglify-js": "^2.4.19"
+    "clean-css": "^3.1.8"
   }
 }
