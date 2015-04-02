@@ -1,46 +1,33 @@
-#sidebar {
-  float: none;
-
-  .widget {
-    margin-bottom: 2em;
+.search {
+  input {
+    box-sizing: border-box;
+    padding: 10px 15px 10px 3px;
+    width: 100%;
+    border: 1px solid $color-border;
     background: #fff;
-    box-shadow: 1px 2px 3px #ddd;
-    word-wrap: break-word;
-    .title {
-      margin: 0;
-      padding: 10px 20px;
-      border-bottom: 1px solid $color-border;
-      font-weight: normal;
-      font-size: 16px;
-    }
-    .entry {
-      margin: 0;
-      padding: 15px 20px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    ul, ol, dl {
-      list-style: none;
-      ul, ol, dl {
-        margin-left: 20px;
-        list-style: disc;
-      }
+    color: $color-meta;
+    font-size: 14px;
+  }
+}
+
+.widget {
+  margin-bottom: 30px;
+  ul.entry {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 2;
+    li {
+      float: left;
+      margin-right: 30px;
     }
   }
-
-  .search {
-    input {
-      box-sizing: border-box;
-      padding: 10px 15px 10px 3px;
-      width: 100%;
-      border: 1px solid $color-border;
-      background: #fff;
-      color: $color-meta;
-      font-size: 14px;
+  &.tag {
+    .archive-title::before {
+      content: '\f02b';
     }
-  }
-
-  .tag {
     small {
       margin-left: 2px;
       color: $color-meta;
@@ -54,37 +41,9 @@
       }
     }
   }
-  .twitter {
-    li {
-      padding: 15px 20px;
-      border-bottom: 1px solid $color-border;
-      font-size: 75%;
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-    small {
-      display: block;
-      margin-top: 10px;
-      color: $color-meta;
-      line-height: 1;
-    }
-  }
-  .tagcloud {
-    .entry {
-      padding-right: 5px;
-    }
-    a {
-      display: inline-block;
-      margin-right: 10px;
-    }
-  }
-}
-
-@media screen and (max-width: $width-phone) {
-  #sidebar {
-    .widget {
-      margin-bottom: 10px;
+  &.category {
+    .archive-title::before {
+      content: '\f07b';
     }
   }
 }

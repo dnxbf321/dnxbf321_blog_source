@@ -50,23 +50,6 @@
 	}());
 </script>
 
-{% if config.disqus_shortname %}
-<script>
-	(function (disqus_shortname, commentEnabled) {
-		var dsq = document.createElement('script');
-		dsq.type = 'text/javascript';
-		dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/' + (commentEnabled ? 'embed.js' : 'count.js');
-		document.getElementsByTagName('head')[0].appendChild(dsq);
-	}('{{ config.disqus_shortname }}', {
-	{
-		page.comments
-	}
-	}))
-	;
-</script>
-{% endif %}
-
 {% if theme.fancybox %}
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>

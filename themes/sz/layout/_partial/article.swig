@@ -23,14 +23,14 @@
 		<footer class="clearfix">
 			{% if index %}
 				{% if item.excerpt %}
-				<div class="f-left">
-					<a href="{{ url_for(item.path) }}#more" class="more-link">{{ theme.excerpt_link }}</a>
-				</div>
+					<div class="read-more">
+						<a href="{{ url_for(item.path) }}#more" class="more-link">{{ theme.excerpt_link }}</a>
+					</div>
 				{% endif %}
-				{% if item.comment && config.disqus_shortname %}
-				<div class="f-right">
-					<a href="{{ item.permalink }}#disqus_thread" class="comment-link">Comments</a>
-				</div>
+				{% if item.comments && theme.comment.enable && theme.comment.disqus_shortname %}
+					<div class="disqus-comment">
+						<a href="{{ item.permalink }}#disqus_thread" class="comment-link">{{ __('comment') }}</a>
+					</div>
 				{% endif %}
 			{% endif %}
 			{% include 'post/category.swig' %}
@@ -38,5 +38,3 @@
 		</footer>
 	</div>
 </article>
-
-{% include 'comment.swig' %}

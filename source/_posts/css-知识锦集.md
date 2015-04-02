@@ -1,5 +1,6 @@
 title: "css 知识锦集"
 date: 2015-03-31 18:56:15
+layout: post
 categories:
 - 前端
 tags:

@@ -28,8 +28,13 @@
     "hexo-generator-index": "^0.1.0",
     "hexo-generator-tag": "^0.1.0",
     "hexo-renderer-marked": "^0.2.4",
-    "hexo-renderer-stylus": "^0.2.0",
     "hexo-server": "^0.1.2"
   },
-  "license": "ALL SERVERED"
+  "license": "ALL SERVERED",
+  "devDependencies": {
+    "autoprefixer-core": "^5.1.8",
+    "clean-css": "^3.1.8",
+    "html-minifier": "^0.7.0",
+    "uglify-js": "^2.4.19"
+  }
 }

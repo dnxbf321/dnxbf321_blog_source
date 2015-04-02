@@ -17,25 +17,3 @@
     }
   }
 }
-
-.archive {
-  article {
-    .post-content {
-      border: none;
-    }
-
-    header {
-      overflow: hidden;
-      .meta, .title {
-        float: left;
-      }
-      .meta {
-        margin-right: 10px;
-      }
-      .title {
-        margin: 0;
-        line-height: 30px;
-      }
-    }
-  }
-}

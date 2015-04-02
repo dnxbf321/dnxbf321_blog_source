@@ -12,6 +12,7 @@ excerpt_link: Read More
 fancybox: true
 
 comment:
-  enable: false
+  enable: true
+  disqus_shortname: dnxbf321
 
 google_analytics:

@@ -218,7 +218,8 @@ article {
     }
 
     h3, h4, h5, h6 {
-      font-weight: normal
+      font-weight: normal;
+      line-height: 1;
     }
 
     img, video {
@@ -275,8 +276,8 @@ article {
     table {
       border-collapse: collapse;
       td {
-        border: 1px solid $color-border;
         padding: 2px 10px;
+        border: 1px solid $color-border;
       }
     }
   }
@@ -288,44 +289,41 @@ article {
     border-top: 1px solid $color-border;
     color: $color-meta;
     line-height: 16px;
-    a {
-      padding-right: 1em;
-      color: $color-meta;
-      &:hover {
-        color: $color-link-hover;
-        text-decoration: none;
-      }
-      &.more-link {
-        &::before {
-          content: '\f054';
-        }
-      }
-      &.comment-link {
-        &::before {
-          content: '\f075';
-        }
-      }
-    }
-    .categories, .tags {
+    > div {
       position: relative;
       margin: 10px 0;
       padding-left: 25px;
       &::before {
         position: absolute;
+        top: 2px;
+        left: 1px;
         font: 1.1em $font-icon;
+      }
+    }
+    a {
+      padding-right: 1em;
+      color: $color-meta;
+      &:hover {
+        color: $color-link-hover;
+      }
+    }
+    .read-more {
+      &::before {
+        content: '\f054';
+      }
+    }
+    .disqus-comment {
+      &::before {
+        content: '\f075';
       }
     }
     .categories {
       &::before {
-        top: 2px;
-        left: 1px;
         content: '\f07b';
       }
     }
     .tags {
       &::before {
-        top: 3px;
-        left: 2px;
         content: '\f02b';
       }
     }

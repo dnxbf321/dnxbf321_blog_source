@@ -8,4 +8,6 @@
 
 {% include '_partial/pagination.swig' %}
 
+{% include '_partial/disqus_count.swig' %}
+
 {% endblock %}

@@ -1,26 +1,22 @@
-{% if page.category %}
-<h2 class="archive-title category">{{ page.category }}</h2>
-{% elseif page.tag %}
-<h2 class="archive-title tag">{{ page.tag }}</h2>
-{% elseif page.archive && page.month %}
-<h2 class="archive-title">{{ page.year + '-' + page.month}}</h2>
-{% elseif page.archive && page.year%}
-<h2 class="archive-title">{{ page.year }}</h2>
-{% else %}
-<h2 class="archive-title">{{ __('archive') }}</h2>
-{% endif %}
-
-{% if pagination == 2 %}
-
-{% for post in page.posts %}
-{% set pipe = {item: post, index: true} %}
-{% include 'article.swig' with pipe %}
-{% endfor %}
-
-{% include 'pagination.swig' %}
-{% else %}
+{% if page.archive && !page.year %}
+	{% include '../_widget/search.swig' %}
+	{% include '../_widget/category.swig' %}
+	{% include '../_widget/tag.swig' %}
+{% endif%}
 
 <div class="archive">
+	{% if page.category %}
+		<h2 class="archive-title category">{{ page.category }}</h2>
+	{% elseif page.tag %}
+		<h2 class="archive-title tag">{{ page.tag }}</h2>
+	{% elseif page.archive && page.month %}
+		<h2 class="archive-title">{{ page.year + '-' + page.month}}</h2>
+	{% elseif page.archive && page.year%}
+		<h2 class="archive-title">{{ page.year }}</h2>
+	{% else %}
+		<h2 class="archive-title">{{ __('archive') }}</h2>
+	{% endif %}
+
 	{% for item in page.posts %}
 	<article class="{{ item.layout }}">
 		<div class="post-content">
@@ -43,5 +39,5 @@
 		</div>
 	</article>
 	{% endfor %}
+
 </div>
-{% endif %}
