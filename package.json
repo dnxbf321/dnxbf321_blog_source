@@ -18,7 +18,7 @@
     "url": "https://dnxbf321.github.io"
   },
   "hexo": {
-    "version": "3.0.0"
+    "version": "3.1.1"
   },
   "dependencies": {
     "hexo": "^3.0.0",
@@ -33,6 +33,7 @@
   "license": "ALL SERVERED",
   "devDependencies": {
     "autoprefixer-core": "^5.1.8",
-    "clean-css": "^3.1.8"
+    "clean-css": "^3.1.8",
+    "node-sass": "^3.1.2"
   }
 }
