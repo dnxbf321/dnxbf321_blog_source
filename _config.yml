@@ -70,4 +70,3 @@ deploy:
   type: git
   repo: https://github.com/dnxbf321/dnxbf321.github.io.git
   branch: master
-  message: hexo generate again

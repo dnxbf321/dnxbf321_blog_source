@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="description" content="在前端的道路上砥砺前行，Just do IT">
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+	
+	
+	<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+	
+	<link rel="stylesheet" href="/bower_components/normalize.css/normalize.css"/>
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<title>四面的博客 - 做一枚有用的前端工程师</title>
+</head>
+<body>
+<header id="header">
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1><a href="/">四面的博客</a></h1>
+				
+				<h2><a href="/">做一枚有用的前端工程师</a></h2>
+				
+			</div>
+			<nav id="menu">
+				<ul>
+					
+					<li><a href="/">首页</a></li>
+					
+					<li><a href="/archives">归档</a></li>
+					
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<div id="content">
+	<div class="center">
+		<div class="main-col">
+			
+
+
+<article class="post">
+	
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="2015-04-01T11:25:20.000Z"><a href="/2015/04/01/em-与-px-之间的换算关系/">2015-04-01</a></time>
+				</div>
+			
+			
+
+<h1 class="title"><a href="/2015/04/01/em-与-px-之间的换算关系/">em 与 px 之间的换算关系</a></h1>
+
+
+		</header>
+		<div class="entry">
+			
+			
+ <table>
+	 <tr>
+		 <td>12px</td>
+		 <td>0.75em</td>
+	 </tr>
+	 <tr>
+		 <td>13px</td>
+		 <td>0.8em</td>
+	 </tr>
+	 <tr>
+		 <td>13px</td>
+		 <td>0.875em</td>
+	 </tr>
+	 <tr>
+		 <td>15px</td>
+		 <td>0.9375em</td>
+	 </tr>
+	 <tr>
+		 <td>16px</td>
+		 <td>1em</td>
+	 </tr>
+	 <tr>
+		 <td>18px</td>
+		 <td>1.125em</td>
+	 </tr>
+	 <tr>
+		 <td>20px</td>
+		 <td>1.25em</td>
+	 </tr>
+	 <tr>
+		 <td>22px</td>
+		 <td>1.375em</td>
+	 </tr>
+	 <tr>
+		 <td>24px</td>
+		 <td>1.5em</td>
+	 </tr>
+	 <tr>
+		 <td>25px</td>
+		 <td>1.5625em</td>
+	 </tr>
+ </table>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				
+				
+					<div class="disqus-comment">
+						<a href="https://dnxbf321.github.io/2015/04/01/em-与-px-之间的换算关系/#disqus_thread" class="comment-link">评论</a>
+					</div>
+				
+			
+			
+<div class="categories">
+	
+	<a href="/categories/前端/">前端</a>
+	
+</div>
+
+			
+<div class="tags">
+	
+	<a href="/tags/CSS/">#CSS</a>
+	
+	<a href="/tags/前端/">#前端</a>
+	
+</div>
+
+		</footer>
+	</div>
+</article>
+
+
+<article class="post">
+	
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="2015-03-31T10:56:15.000Z"><a href="/2015/03/31/css-知识锦集/">2015-03-31</a></time>
+				</div>
+			
+			
+
+<h1 class="title"><a href="/2015/03/31/css-知识锦集/">css 知识锦集</a></h1>
+
+
+		</header>
+		<div class="entry">
+			
+			<h2 id="calc">calc</h2><p>进行数学运算，可以混合使用百分比和数值</p>
+<h2 id="元素上下居中">元素上下居中</h2><ul>
+<li>弹性盒模型 flexible box</li>
+<li>table</li>
+<li>已知高度的元素配合使用 position margin top</li>
+</ul>
+<h2 id="元素两边对齐，中间的居中对齐">元素两边对齐，中间的居中对齐</h2><p>使用 flexible box<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.parent</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value"> space-between</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="placeholder_css_rules">placeholder css rules</h2><p>-webkit ::-webkit-input-placeholder<br>firefox ::-moz-placeholder<br>IE10+   :-ms-input-placeholder</p>
+<h2 id="伪类和伪元素">伪类和伪元素</h2><p>伪类：不产生新元素节点，举例：:first-child<br>伪元素：产生新元素节点，举例：::after<br> chrome dev tool 元素审查可看到伪元素</p>
+<h2 id="nth-child_和_nth-of-type">nth-child 和 nth-of-type</h2><p>.selector:nth-child(n) 匹配同级的第 n 个元素n 从1开始<br>.selector:nth-of-type(n) 比上多一个限制条件，要求兄弟的类型一致</p>
+<h2 id="transform_动画闪烁">transform 动画闪烁</h2><ul>
+<li><p>开启硬件加速</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.selector</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">translate3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">transform-style</span>:<span class="value"> preserve-<span class="number">3</span>d</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>care about tap-highlight-color</p>
+</li>
+</ul>
+<h2 id="手机屏幕旋转字体大小有变">手机屏幕旋转字体大小有变</h2><p>添加 rule，text-size-adjust: none。已设置 font-size 的文字不会发生这种情况。</p>
+<h2 id="outline_和_border">outline 和 border</h2><p>有一种常见的场景，:hover 加边框。<br>before<br>用 border 来实现，因为标准盒模型不将 border 计算入 width、height，not hover 时也要有 border<br>after<br>outline，只需设置 hover 的状态即可</p>
+<h2 id="box-shadow_和_filter:_drop-shadow">box-shadow 和 filter: drop-shadow</h2><p>box-shadow 只能生成矩形的阴影，drop-shadow 的阴影能包裹非矩形元素</p>
+<h2 id="background-image_for_retina">background-image for retina</h2><p>background-image: image-set(url(pic@1x.png) 1x, url(pc@2x.png) 2x);</p>
+<h2 id="background-position">background-position</h2><p>css3<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.selector</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background-position</span>:<span class="value"> right <span class="number">10px</span> bottom <span class="number">5px</span></span></span>;<span class="comment">/* 参照点右下角 */</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>很像绝对定位有木有</p>
+<h2 id="关闭_spell_check">关闭 spell check</h2><p>表单添加属性 spellcheck=”false”，跟恼人的红色虚线说不</p>
+<h2 id="rem">rem</h2><p><a href="http://isux.tencent.com/web-app-rem.html" title="web app 变革之 rem" target="_blank" rel="external">web app 变革之 rem</a></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				
+				
+					<div class="disqus-comment">
+						<a href="https://dnxbf321.github.io/2015/03/31/css-知识锦集/#disqus_thread" class="comment-link">评论</a>
+					</div>
+				
+			
+			
+<div class="categories">
+	
+	<a href="/categories/前端/">前端</a>
+	
+</div>
+
+			
+<div class="tags">
+	
+	<a href="/tags/CSS/">#CSS</a>
+	
+	<a href="/tags/前端/">#前端</a>
+	
+</div>
+
+		</footer>
+	</div>
+</article>
+
+
+<article class="photo">
+	
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="2014-05-04T12:00:47.000Z"><a href="/2014/05/04/台湾自由行-台北/">2014-05-04</a></time>
+				</div>
+			
+			
+
+<h1 class="title"><a href="/2014/05/04/台湾自由行-台北/">台湾自由行 - 台北 </a></h1>
+
+
+		</header>
+		<div class="entry">
+			
+			<h3 id="台湾夜景">台湾夜景</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0020.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0020.jpg?imageView2/2/w/640"></a>
+
+<h3 id="文化产业园">文化产业园</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270455.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270455.jpg?imageView2/2/w/640"></a>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270460.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270460.jpg?imageView2/2/w/640"></a>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270461.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270461.jpg?imageView2/2/w/640"></a>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0022.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0022.jpg?imageView2/2/w/640"></a>
+
+<h3 id="故宫">故宫</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270494.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270494.jpg?imageView2/2/w/640"></a>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0025.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0025.jpg?imageView2/2/w/640"></a>
+
+<h3 id="夜市小吃">夜市小吃</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0034.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0034.jpg?imageView2/2/w/640"></a>
+
+<h3 id="中山纪念堂">中山纪念堂</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270489.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270489.jpg?imageView2/2/w/640"></a>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270476.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270476.jpg?imageView2/2/w/640"></a>
+
+<h3 id="101大厦">101大厦</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/P4270492.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/P4270492.jpg?imageView2/2/w/640"></a>
+
+<h3 id="往下一站的车票">往下一站的车票</h3>
+<a href="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0038.jpg" class="fancybox" target="_blank" rel="external"><img src="http://7xpvl0.com1.z0.glb.clouddn.com/IMG_0038.jpg?imageView2/2/w/640"></a>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				
+				
+					<div class="disqus-comment">
+						<a href="https://dnxbf321.github.io/2014/05/04/台湾自由行-台北/#disqus_thread" class="comment-link">评论</a>
+					</div>
+				
+			
+			
+<div class="categories">
+	
+	<a href="/categories/游记/">游记</a>
+	
+</div>
+
+			
+<div class="tags">
+	
+	<a href="/tags/台湾/">#台湾</a>
+	
+	<a href="/tags/旅游/">#旅游</a>
+	
+	<a href="/tags/自由行/">#自由行</a>
+	
+</div>
+
+		</footer>
+	</div>
+</article>
+
+
+<nav id="pagination">
+	
+	
+</nav>
+
+
+<script>
+	(function (disqus_shortname) {
+		window.addEventListener('DOMContentLoaded', function () {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			document.getElementsByTagName('head')[0].appendChild(dsq);
+		}, false);
+	}('dnxbf321'));
+</script>
+
+
+
+		</div>
+		
+	</div>
+</div>
+
+<footer id="footer">
+	<div class="center">
+		&copy; 2016
+		
+		Jason Tung
+		.
+		&nbsp;&nbsp;
+		Blog generated by <a href="http://hexo.io">hexo</a>
+	</div>
+</footer>
+
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script>
+	/* #header特效 */
+	(function() {
+		var $header = $('#header');
+		$(window).on('scroll', function() {
+			if (window.scrollY > 100) {
+				$header.addClass('small');
+			} else {
+				$header.removeClass('small');
+			}
+		});
+	}());
+</script>
+
+
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script>
+	(function ($) {
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+
+
+
+
+</body>
+</html>
