@@ -7,47 +7,16 @@ tags:
 - CSS
 - 前端
 ---
-{% raw %}
- <table>
-	 <tr>
-		 <td>12px</td>
-		 <td>0.75em</td>
-	 </tr>
-	 <tr>
-		 <td>13px</td>
-		 <td>0.8em</td>
-	 </tr>
-	 <tr>
-		 <td>13px</td>
-		 <td>0.875em</td>
-	 </tr>
-	 <tr>
-		 <td>15px</td>
-		 <td>0.9375em</td>
-	 </tr>
-	 <tr>
-		 <td>16px</td>
-		 <td>1em</td>
-	 </tr>
-	 <tr>
-		 <td>18px</td>
-		 <td>1.125em</td>
-	 </tr>
-	 <tr>
-		 <td>20px</td>
-		 <td>1.25em</td>
-	 </tr>
-	 <tr>
-		 <td>22px</td>
-		 <td>1.375em</td>
-	 </tr>
-	 <tr>
-		 <td>24px</td>
-		 <td>1.5em</td>
-	 </tr>
-	 <tr>
-		 <td>25px</td>
-		 <td>1.5625em</td>
-	 </tr>
- </table>
-{% endraw %}
+
+px | em
+---|---
+12 | 0.75
+13 | 0.8
+14 | 0.875
+15 | 0.9375
+16 | 1
+18 | 1.125
+20 | 1.25
+22 | 1.375
+24 | 1.5
+25 | 1.5625
