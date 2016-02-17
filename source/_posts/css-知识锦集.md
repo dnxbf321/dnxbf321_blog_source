@@ -7,7 +7,6 @@ tags:
 - CSS
 - 前端
 ---
-# css 知识
 
 ### calc()
 
@@ -24,7 +23,7 @@ display: box 旧
 - css3: 弹性盒模型
 
 - css3: translate
-```
+```css
   .element{
     position: absolute;
     top: 50%;
@@ -34,7 +33,7 @@ display: box 旧
 ```
 
 - 模拟 table
-```
+```css
   .elementParentParent {
     display: table;
     .parent {
@@ -48,7 +47,7 @@ display: box 旧
 ```
 
 - 事先知道元素高度：
-```
+```css
   .element{
     position: absolute;
     top: 50%;
@@ -59,7 +58,7 @@ display: box 旧
 
 
 ### 绝对定位元素的上下左右居中
-```
+```css
   .element {
     position: absolute;
     top: 0;
@@ -87,10 +86,9 @@ display: box 旧
 
 ### data/image
 
-请避免使用 
-- 增加文件体积，浏览器会阻塞加载 css 文件，之后才渲染网页，保持css 文件的小巧能让用户更快的看到网页，让用户等待超过 3 秒，你将会失去他 
+- 增加文件体积，浏览器会阻塞加载 css 文件，之后才渲染网页，保持 css 文件的小巧能让用户更快的看到网页，速度就是 pv
 - 渲染占 cpu，特别是在移动端
-- 不能缓存，每次渲染都需要重新解析渲染，耗资源 
+- 不能缓存，每次渲染都需要重新解析渲染，耗资源
 - 不语义化，不知道这张图片是什么，没有命名，不语义
 
 ### placeholder 样式
@@ -100,9 +98,9 @@ display: box 旧
 
 ### 伪类和伪元素怎么区分
 
-他们是否产生了新的元素（抽象），例子： 
-- ::first-line如果没有伪类伪元素，需要在第一行加标签如 span，这时，css 中它就是伪元素，伪元素用两个冒号 
-- :first-child 如果没有伪类伪元素，为了实现效果，也只需在第一个元素多加一个 class 即可解决，换句话说不用另外添加标签即可实现效果，这时，它就是伪类，伪类用一个冒号
+看是否产生了新的元素（抽象），例子：
+- ::first-line 如果不使用伪类伪元素，需要在第一行加标签 span，这时，css 中他就是伪元素，伪元素使用两个冒号
+- :first-child 如果不使用伪类伪元素，只需在第一个元素加 class 即可实现，不需要新加标签，这时，css 中他就是伪类，伪类使用一个冒号
 
 ### 图片适配 retina 屏
 使用 image-set
@@ -117,9 +115,9 @@ display: box 旧
 ### transform 闪烁
 
 闪烁归根结底是帧率不足，可通过开启硬件加速解决，使用
-```
+```css
   transform: transform3d(0, 0, 0);
-  transform-style: preserve-3d
+  transform-style: preserve-3d;
 ```
 如若还是没解决，这肯定是其他地方出了问题，极大可能是你没设置 tap-highlight-color: rgba(255, 255, 255, 0)
 
@@ -171,7 +169,7 @@ iOS 8.1 支持 type 类型有 date、time、month，不支持 week、datetime、
 使用iconfont：http://emojisymbols.com/
 
 ### 段落 underline
-```
+```css
 p {
   line-height: 25px;
   background-image: linear-gradient(to bottom, #fff 24px, #ccc 24px, rgba(0,0,0,0.5) 25px);
@@ -206,7 +204,7 @@ p {
 ### border-radius
 
 「/」（斜杠）标签
-```
+```css
   border-raduis: 35px 25px 30px 20px / 25px 35px 20px 20px;
 ```
 「/」前定义 x 轴半径，「/」后定义 y 轴半径。
