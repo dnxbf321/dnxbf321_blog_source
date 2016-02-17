@@ -1,4 +1,5 @@
 title: "Hello world"
+date: 2014-03-20
 tags:
 - hexo
 ---

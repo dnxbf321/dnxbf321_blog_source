@@ -53,6 +53,240 @@
 			
 				<div class="meta">
 					<div class="icon"></div>
+					<time datetime="2016-01-05T02:00:20.000Z"><a href="/2016/01/05/ECMAScript 2015 (ES6) 概览/">2016-01-05</a></time>
+				</div>
+			
+			
+
+<h1 class="title"><a href="/2016/01/05/ECMAScript 2015 (ES6) 概览/">ECMAScript 2015 (ES6) 概览</a></h1>
+
+
+		</header>
+		<div class="entry">
+			
+			<h2 id="Sublime_Text_中运行_ES6">Sublime Text 中运行 ES6</h2><ol>
+<li><p>安装最新版的 node</p>
+</li>
+<li><p>配置新的 build 系统</p>
+<ol>
+<li><p>打开 Tools -&gt; Build System -&gt; New Build System…</p>
+</li>
+<li><p>编辑如下：{ “cmd”: [“/usr/local/bin/node”, “–use-strict”, “–harmony_destructuring”, “$file”], “selector”: “source.js”}</p>
+</li>
+<li><p>保存成 ES6.sublime-build 到默认路径</p>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>测试</p>
+<ol>
+<li><p>编辑 test.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo, bar] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(foo, bar);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行: Cmd + B</p>
+</li>
+<li><p>控制台输出：1 2</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="ECMAScript_2015_(ES6)_简介">ECMAScript 2015 (ES6) 简介</h2><p>ECMAScript 6 是 JavaScript 语言的新一代标准，它于2000年开始制定，历经15年，终于在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
+<h2 id="let_和_const">let 和 const</h2><p>let 声明局部变量，为Javascript 新增了块级作用域，不允许在同一作用域内，重复声明同一个变量</p>
+<p>const 声明常量，必须初始化，一旦声明，不许改变</p>
+<p>let 和 const 变量声明不提升</p>
+<h2 id="变量的解构赋值">变量的解构赋值</h2><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</p>
+<p>解构赋值便于我们一次性声明多个变量，方便提取函数返回值、JSON 数据，允许设置默认值。</p>
+<h3 id="数组的解构赋值_模式匹配">数组的解构赋值 模式匹配</h3>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, [b, c]] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]];</span><br></pre></td></tr></table></figure>
+<p>  解构不成功，变量的值就等于 undefined</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, b] = [<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<p>  不完全解构</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, [b], c] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<p>  解构赋值指定默认值</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [a, b=<span class="number">2</span>] = [<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="对象的解构赋值">对象的解构赋值</h3><p>  变量必须与属性同名<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;a, b&#125; = &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>  变量名与属性名不一致是，必须写成下面这样<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123;a: renameA, b&#125; = &#123;a: <span class="number">1</span>, b: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="comment">// a 不被赋值，renameA = 1</span></span><br></pre></td></tr></table></figure></p>
+<p>  解构用于嵌套结构。可把数据结构看成树，仅叶子被解析赋值，其他节点均仅为模式（undefined）。<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  p: [</span><br><span class="line">    <span class="string">"Hello"</span>,</span><br><span class="line">    &#123; y: <span class="string">"World"</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> &#123; p: [x, &#123; y &#125;] &#125; = obj;</span><br><span class="line"><span class="comment">// p 仅是模式，不会被赋值，p error undefined</span></span><br><span class="line"><span class="keyword">var</span> &#123; p &#125; = obj;</span><br><span class="line"><span class="comment">// p = ["hello, &#123;y: "World"&#125;"]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串的解构赋值">字符串的解构赋值</h3><p>  字符串被转换成一个类似数组的对象，类似 ‘hello’.split(‘’)，按照对象解构赋值的规则进行</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b, c, d, e] = <span class="string">'hello'</span>;</span><br></pre></td></tr></table></figure>
+<p>  字符串作为字符串对象进行解构赋值</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;length: len&#125; = <span class="string">'hello'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="数值和布尔值的解构赋值">数值和布尔值的解构赋值</h3><p>  将数值和布尔值先转换成对象，再按照对象的规则进行</p>
+<h3 id="null,_undefined_无法转换成对象，不能进行解构赋值">null, undefined 无法转换成对象，不能进行解构赋值</h3><h2 id="模板字符串">模板字符串</h2><p>用反引号(`)标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> world = <span class="string">'world'</span>;</span><br><span class="line"></span><br><span class="line"><span class="string">`hello world`</span>;</span><br><span class="line"></span><br><span class="line"><span class="string">`</span><br><span class="line">hello world</span><br><span class="line">`</span></span><br><span class="line"></span><br><span class="line"><span class="string">`hello <span class="subst">$&#123;world&#125;</span>`</span></span><br></pre></td></tr></table></figure>
+<p>  模板字符串中嵌入变量，需要将变量名写在${}之中。大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。</p>
+<h2 id="标签模板">标签模板</h2><p>模板字符串紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。常被用来过滤 HTML 字符串，防止恶意内容。另一个应用，就是多语言转换（国际化）。</p>
+<h2 id="正则表达式">正则表达式</h2><p>  u 修饰符，含义为 unicode 模式，用来正确处理四个字节的UTF-16编码。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/^\uD83D/u.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// false</span></span><br><span class="line">/^\uD83D/.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// true</span></span><br><span class="line">/^.$/u.test(<span class="string">'我'</span>); <span class="comment">// true, . 也能匹配中文（两个字符）了</span></span><br></pre></td></tr></table></figure>
+<p>  y 修饰符，也叫『粘连』(sticky)修饰符。</p>
+<p>  y修饰符的作用与g修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'aaa_aa_a'</span>;</span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/a+/y</span>;</span><br><span class="line">re.exec(str); <span class="comment">// ["aaa"]</span></span><br><span class="line">re.exec(str); <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<p>  目前，y、u 修饰符都还不支持</p>
+<h2 id="数值扩展">数值扩展</h2><table>
+<thead>
+<tr>
+<th>进制</th>
+<th>前缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  二进制</td>
+<td>0b</td>
+</tr>
+<tr>
+<td>  八进制</td>
+<td>0o</td>
+</tr>
+<tr>
+<td>  十六进制</td>
+<td>0x</td>
+</tr>
+</tbody>
+</table>
+<p>  Number(0x15) 转换成十进制，非数字转换为数值</p>
+<p>  Number.isFinite 判断非无穷</p>
+<p>  Number.isNaN 判断非数值</p>
+<p>  Number.parseInt 转整数</p>
+<p>  Number.parseFloat 转浮点数</p>
+<p>  Number.isInteger 判断是否是整数</p>
+<p>  window.isFinite 对参数先调用 Number()</p>
+<p>  window.isNaN</p>
+<p>  Math.trunc 返回数值的整数部分</p>
+<p>  Math.sign 判断数值是正数、负数、还是零，结果： 1、-1、0、-0、NaN</p>
+<h2 id="Iterator（遍历器）">Iterator（遍历器）</h2><p>  提供统一的访问机制遍历数据集合的成员。供 for…of 使用。</p>
+<p>  map|set|array</p>
+<pre><code>.<span class="function"><span class="title">keys</span><span class="params">()</span></span>：返回一个键名的遍历器
+
+.<span class="function"><span class="title">values</span><span class="params">()</span></span>：返回一个键值的遍历器
+
+.<span class="function"><span class="title">entries</span><span class="params">()</span></span>：返回一个键值对的遍历器
+</code></pre>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [index, value] <span class="keyword">of</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].entries()) &#123;</span><br><span class="line">  index; <span class="comment">// 0, 1, 2</span></span><br><span class="line">  value; <span class="comment">// 1, 2, 3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组扩展">数组扩展</h2><p>  Array.from 将类似数组的对象和可遍历的对象转换成真正的数组</p>
+<p>  Array.of 将一组值转换为数组</p>
+<p>  array.copyWithin(target, start, end) 将 start 位到 end 前一位复制到 target 位开始的位置</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">2</span>, -<span class="number">1</span>);</span><br><span class="line"><span class="comment">// [3, 4, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<p>  array.find((item)=&gt;{return true}) 遍历数组，找出第一个符合条件（回调函数返回 true）的值，将该值返回</p>
+<p>  array.findIndex 同上，返回该值的位置，找不到符合条件的返回 -1</p>
+<p>  array.fill(value, start, end) 往原数组的 start 位置到 end 前一个位置填充 value</p>
+<h2 id="函数扩展">函数扩展</h2><p>  参数默认值。参数值为 undefined 时，赋予默认值。在尾参数上定义默认值，否则该参数是没法省略的。</p>
+<p>  指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。</p>
+<p>  可用于指定某一参数不能被省略，或表明这个参数可以省略</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throwMissing</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'missing'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a=throwMissing(</span>), <span class="title">b</span>=2, <span class="title">c</span>=3) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>); <span class="comment">// a=1, b=2, c=3</span></span><br><span class="line">f(<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">4</span>); <span class="comment">// a=1, b=2, c=4</span></span><br><span class="line">f.length; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>  rest 参数。获取函数多余的参数。ES6 严格模式不能使用 arguments。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">head, ...arg</span>) </span>&#123;&#125;</span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//head=1, arg=[2, 3]</span></span><br></pre></td></tr></table></figure>
+<p>  扩展运算符（…arrayName）。将数组转换为逗号分隔的参数序列。主要用于函数调用。</p>
+<p>  应用：</p>
+<ol>
+<li><p>代替apply</p>
+</li>
+<li><p>合并数组</p>
+</li>
+<li><p>与解构赋值组合生成数组</p>
+</li>
+<li><p>得到正确的字符串长度</p>
+</li>
+<li><p>将实现了Iterator接口的对象转换成数组</p>
+</li>
+</ol>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array, ...items</span>) </span>&#123;</span><br><span class="line">  array.push(...items); <span class="comment">// [1, 2, 3]</span></span><br><span class="line">  array.push.apply(array, items); <span class="comment">// bad case</span></span><br><span class="line">&#125;</span><br><span class="line">push([], <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, ...[<span class="number">4</span>, <span class="number">5</span>]]; <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a, ...rest] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]; <span class="comment">//a=1, rest=[2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'我shi'</span>;</span><br><span class="line">[...str].length; <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p>  箭头函数 ()=&gt;{} 语法糖</p>
+<h2 id="对象扩展">对象扩展</h2><p>  Object.is 同值相等，基本与 === 一致，但是 +0 不等于 -0， NaN 等于 NaN</p>
+<p>  Object.assign(target, source, source2) 将 source、source2 对象的自身属性复制到 target 对象，不可枚举属性和继承的属性不被拷贝。对于嵌套的对象，此方法执行的是替换，而非添加。应用：</p>
+<pre><code>-<span class="ruby"> 为对象添加属性和方法
+</span>
+-<span class="ruby"> 克隆对象
+</span>
+-<span class="ruby"> 合并对象
+</span>
+-<span class="ruby"> 为对象属性指定默认值</span>
+</code></pre><h2 id="Set_和_WeakSet">Set 和 WeakSet</h2><p>  它类似于数组，但是成员的值都是唯一的，没有重复的值。WeakSet 的成员只能是对象。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<p>  set.size set成员个数</p>
+<p>  set.add 添加成员</p>
+<p>  set.delete 删除成员</p>
+<p>  set.has 检查是否拥有某值</p>
+<p>  set.clear 清空set</p>
+<h2 id="Map_和_WeakMap">Map 和 WeakMap</h2><p>  类似于 Object，但是 Map 的键不局限于字符串。WeakMap 的键只能是对象，NaN 除外。</p>
+<p>  map.size 成员个数</p>
+<p>  map.set(key, value) 添加成员</p>
+<p>  map.get(key) 返回指定 key 的成员的值，找不到则返回 undefined</p>
+<p>  map.has 检查数据中是否含有某值</p>
+<p>  map.delete 删除指定键值成员，成功返回 true，失败返回 false</p>
+<p>  map.clear 清空map</p>
+<h2 id="WeakSet_和_WeakMap">WeakSet 和 WeakMap</h2><p>  没有 size 属性，没有遍历操作，无法清空。</p>
+<p>  典型应用是，一个对应DOM元素的WeakMap结构，当某个DOM元素被清除，其所对应的WeakMap记录就会自动被移除。基本上，WeakMap的专用场合就是，它的键所对应的对象，可能会在将来消失。WeakMap结构有助于防止内存泄漏。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.querySelector(<span class="string">".element"</span>);</span><br><span class="line"></span><br><span class="line">wm.set(element, <span class="string">"Original"</span>);</span><br><span class="line">wm.get(element) <span class="comment">// "Original"</span></span><br><span class="line"></span><br><span class="line">element.parentNode.removeChild(element);</span><br><span class="line">element = <span class="literal">null</span>;</span><br><span class="line">wm.get(element) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h2 id="Generator_函数">Generator 函数</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'1'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'2'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> it = f();</span><br><span class="line">it.next(); <span class="comment">// 执行 yield '1'，等到 next 命令再向下执行</span></span><br><span class="line">it.next(); <span class="comment">// 1</span></span><br><span class="line">it.next(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>  形式上，function 与方法名中间有（*）号，函数内部用 yield（产出），定义不同内部状态。yield 只能出现在 generator 函数中。</p>
+<p>  执行 generator 函数会返回一个遍历器，不断的执行 next，遍历函数的每一个状态。</p>
+<p>  yield 语句本身没有返回值，通过在 next 带上一个参数，设置上一个 yield 的返回值。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params">x=1</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="keyword">yield</span> (x + <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">var</span> z = <span class="keyword">yield</span> (x + y);</span><br><span class="line">  <span class="keyword">return</span> x + y + z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> it = f();</span><br><span class="line">it.next(); <span class="comment">// x=1, y=undefined, z=undefined</span></span><br><span class="line">it.next(<span class="number">4</span>); <span class="comment">// x=1, y=4, z=undefined</span></span><br><span class="line">it.next(<span class="number">10</span>); <span class="comment">// x=1, y=4, z=10</span></span><br></pre></td></tr></table></figure>
+<p>  for … of … 可代替 next</p>
+<h2 id="Promise">Promise</h2><p>  一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的API，可供进一步处理。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    resolve(<span class="string">'a'</span>);</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line">p.then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2秒后输出 a</span></span><br></pre></td></tr></table></figure>
+<p>  promise.then 为 promise 实例添加状态改变时的回调函数，第一个参数为 resolved 的回调，第二个参数是 rejected 的回调</p>
+<p>  promise.catch 指定发生错误时的回调函数</p>
+<p>  Promise.race 将多个 promise 实例包装成一个新实例，只要一个实例的状态改变了，新实例的状态就跟着改变了，传递给回调函数的值为率性改变状态示例的返回值</p>
+<p>  Promise.all 将多个 Promise 实例包装秤一个新实例，所有的实例状态改变了，新实例的状态才会改变，新实例的状态由各个实例的最终状态执行『且』运算得到，传递给回调函数的值为每个实例结果组成的数组</p>
+<p>  Promise.resolve 返回一个状态为 resolved 的实例</p>
+<p>  Promise.reject 返回一个状态为 rejected 的实例</p>
+<h2 id="Class">Class</h2><p>  ECMAScript 5 构造函数的语法糖。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'a'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  sayIt() &#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.a);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES 5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.a = <span class="string">'a'</span>;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.sayIt = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>  Class 继承</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'b'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  sayIt() &#123;</span><br><span class="line">    <span class="keyword">super</span>.sayIt();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br><span class="line">b.sayIt();</span><br></pre></td></tr></table></figure>
+<p>  super关键字指向父类</p>
+<p>  static 关键字，表示该方法不会被实例继承，而是直接通过类来调用，被称为静态方法。静态方法会被继承。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>() </span>&#123;</span><br><span class="line">  constructor() &#123;&#125;</span><br><span class="line">  static sayHi() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">A.sayHi();</span><br></pre></td></tr></table></figure>
+<p>  静态属性。class 内部只有静态方法，没有静态属性。<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>() </span>&#123;&#125;</span><br><span class="line">A.hi = <span class="string">'hi'</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="模块">模块</h2><p>  通过export命令显式指定输出的代码，输入时采用import静态命令</p>
+<h3 id="export_命令">export 命令</h3>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jackson.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span>;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure>
+<p>  as 重命名对外接口名称<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName <span class="keyword">as</span> fn, lastName <span class="keyword">as</span> ln, year <span class="keyword">as</span> y&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>  export default 为模块指定默认输出<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jackson2.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;firstName: <span class="string">'Mickael'</span>, lastName: <span class="string">'Jackson'</span>, year: <span class="number">1958</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="import_命令">import 命令</h3><p>  引入具体的值<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./jackson'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>  全部引入<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> jackson <span class="keyword">from</span> <span class="string">'./jackson'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>  引入使用 export default 的模块<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jackson <span class="keyword">from</span> <span class="string">'./jackson2'</span>;</span><br></pre></td></tr></table></figure></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				
+				
+					<div class="disqus-comment">
+						<a href="https://dnxbf321.github.io/2016/01/05/ECMAScript 2015 (ES6) 概览/#disqus_thread" class="comment-link">评论</a>
+					</div>
+				
+			
+			
+<div class="categories">
+	
+	<a href="/categories/前端/">前端</a>
+	
+</div>
+
+			
+<div class="tags">
+	
+	<a href="/tags/Javascript/">#Javascript</a>
+	
+	<a href="/tags/前端/">#前端</a>
+	
+</div>
+
+		</footer>
+	</div>
+</article>
+
+
+<article class="post">
+	
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon"></div>
 					<time datetime="2015-04-01T11:25:20.000Z"><a href="/2015/04/01/em-与-px-之间的换算关系/">2015-04-01</a></time>
 				</div>
 			
@@ -338,6 +572,73 @@
 	<a href="/tags/旅游/">#旅游</a>
 	
 	<a href="/tags/自由行/">#自由行</a>
+	
+</div>
+
+		</footer>
+	</div>
+</article>
+
+
+<article class="post">
+	
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon"></div>
+					<time datetime="2014-03-19T16:00:00.000Z"><a href="/2014/03/20/Hello-world/">2014-03-20</a></time>
+				</div>
+			
+			
+
+<h1 class="title"><a href="/2014/03/20/Hello-world/">Hello world</a></h1>
+
+
+		</header>
+		<div class="entry">
+			
+			<h1 id="Hexo">Hexo</h1><p>A fast, simple &amp; powerful blog framework, powered by <a href="http://nodejs.org" target="_blank" rel="external">Node.js</a>.</p>
+<h2 id="Features">Features</h2><ul>
+<li>Blazing fast generating</li>
+<li>Support for GitHub Flavored Markdown and most Octopress plugins</li>
+<li>One-command deploy to GitHub Pages, Heroku, etc.</li>
+<li>Powerful plugin system</li>
+</ul>
+<h2 id="Installation">Installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="Quick_Start">Quick Start</h2><p><strong>Setup your blog</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p><strong>Start the server</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><strong>Create a new post</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello Hexo"</span></span><br></pre></td></tr></table></figure>
+<p><strong>Generate static files</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="More_Information">More Information</h2><ul>
+<li>Read the <a href="http://hexo.io/" target="_blank" rel="external">documentation</a></li>
+<li>Find solutions in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a></li>
+<li>Join discussion on <a href="https://groups.google.com/group/hexo" target="_blank" rel="external">Google Group</a></li>
+<li>See the <a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">plugin list</a> and the <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">theme list</a> on wiki</li>
+<li>Follow <a href="https://twitter.com/hexojs" target="_blank" rel="external">@hexojs</a> for latest news</li>
+</ul>
+<h2 id="License">License</h2><p>MIT</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				
+				
+					<div class="disqus-comment">
+						<a href="https://dnxbf321.github.io/2014/03/20/Hello-world/#disqus_thread" class="comment-link">评论</a>
+					</div>
+				
+			
+			
+			
+<div class="tags">
+	
+	<a href="/tags/hexo/">#hexo</a>
 	
 </div>
 
