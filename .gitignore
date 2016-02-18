@@ -1,7 +1,7 @@
 .DS_Store
 Thumbs.db
-db.json
 node_modules
 .idea
 public
 .deploy_git
+db.json
