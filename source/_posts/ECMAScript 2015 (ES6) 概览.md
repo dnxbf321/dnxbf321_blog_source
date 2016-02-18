@@ -20,7 +20,6 @@ tags:
 
     3. 保存成 ES6.sublime-build 到默认路径
 
-
 3. 测试
 
     1. 编辑 test.js
