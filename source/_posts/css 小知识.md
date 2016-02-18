@@ -1,4 +1,4 @@
-title: "css 知识锦集"
+title: "css 小知识"
 date: 2015-03-31 18:56:15
 layout: post
 categories:
@@ -111,6 +111,14 @@ display: box 旧
 ### :nth-child 和 :nth-of-type
 - e:nth-child 匹配的是父元素的第 n 个子元素 e
 - e:nth-of-type 匹配同类型中的第 n 个同级兄弟元素 e
+
+
+### prefetch
+
+```css
+<link rel="prefetch" href="/avatar.png" />
+```
+在页面加载的时候预先加载指定的页面或元素。也能够使用 prerendering 特性令你的网站速度更快，浏览器能够在后台获取并渲染整个页面。
 
 ### transform 闪烁
 
