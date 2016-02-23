@@ -396,6 +396,17 @@ it.next(10); // x=1, y=4, z=10
 
   for ... of ... 可代替 next
 
+如果在 generator 函数中再调用其他 generator 函数，需要使用 yield * 语句
+
+  ```
+function * bar() {
+  yield 1;
+}
+function * foo() {
+  yield * bar();
+}
+  ```
+
 ## Promise
 
   一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的API，可供进一步处理。
