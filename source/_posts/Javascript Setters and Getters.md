@@ -1,4 +1,4 @@
-title: "JavaScript Getters and Setters"
+title: "Javascript Getters and Setters"
 date: 2016-02-24 15:15:28
 layout: post
 categories:
