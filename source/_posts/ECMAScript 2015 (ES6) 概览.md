@@ -88,6 +88,7 @@ var {a: renameA, b} = {a: 1, b: 2};
   ```
 
   解构用于嵌套结构。可把数据结构看成树，仅叶子被解析赋值，其他节点均仅为模式（undefined）。
+
   ```js
 var obj = {
   p: [
@@ -398,7 +399,7 @@ it.next(10); // x=1, y=4, z=10
 
 如果在 generator 函数中再调用其他 generator 函数，需要使用 yield * 语句
 
-  ```
+  ```js
 function * bar() {
   yield 1;
 }

@@ -35,6 +35,7 @@ co(function*() {
 上面是一个 co 的使用范例。它接受一个 generator 函数作为参数，返回一个 Promise 对象，将 generator 函数的执行结果作为 resolve 的参数，通过调用 then 方法，将结果打印到控制台。
 
 co 的源码很短，不过 200 来行（注释计算在内了），如果我们只按照上面的例子调用 co，co 可以简化为如下代码
+
 ```js
 module.exports = simpleCo;
 function simpleCo(gen) {

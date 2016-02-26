@@ -29,6 +29,7 @@ document.URL == location.href，但是 document.URL 是只读的
 
 ### NodeList
 不是数组，和 arguments 对象类似，要使用数组的方法，可以用
+
 ```js
   Array.prototype.forEach.call(myNodeList, function() {
     // do something with nodeItem
@@ -36,6 +37,7 @@ document.URL == location.href，但是 document.URL 是只读的
 ```
 
 ### array concat 和 push 互用
+
 ```js
 [1, 2].concat([3, 4]);
 [1, 2].push(3, 4);
@@ -44,6 +46,7 @@ document.URL == location.href，但是 document.URL 是只读的
 ### style.cssText 批量设置行内样式
 
 ### classList API
+
 ```js
 divNode.classList.add('className');
 divNode.remove('className');
@@ -53,6 +56,7 @@ divNode.toggle('className');
 ### focus、blur 事件可以用捕获而不是冒泡的办法获得。
 
 ### 全能判断一个变量的类型：
+
 ```js
 Object.prototype.toString.call(myVar)
 // [object Function/Object/String/Array/Boolean/Number]
@@ -75,6 +79,7 @@ Object.prototype.toString.call(myVar)
 详见 <https://developer.mozilla.org/zh-CN/docs/Controlling_DNS_prefetching>
 
 ### input pattern
+
 ```html
 <input type="email" pattern="[^ @]*@[^ @]*" value="">
 ```
@@ -83,6 +88,7 @@ Object.prototype.toString.call(myVar)
 ### iOS safari 访问 camera
 
 对应的 html5 表单：
+
 ```html
 <input type="file" accept="image/*" capture="camera" id="capture">
 ```

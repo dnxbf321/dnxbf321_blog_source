@@ -23,6 +23,7 @@ display: box 旧
 - css3: 弹性盒模型
 
 - css3: translate
+
 ```css
   .element{
     position: absolute;
@@ -33,6 +34,7 @@ display: box 旧
 ```
 
 - 模拟 table
+
 ```css
   .elementParentParent {
     display: table;
@@ -47,6 +49,7 @@ display: box 旧
 ```
 
 - 事先知道元素高度：
+
 ```css
   .element{
     position: absolute;
@@ -58,6 +61,7 @@ display: box 旧
 
 
 ### 绝对定位元素的上下左右居中
+
 ```css
   .element {
     position: absolute;
@@ -123,6 +127,7 @@ display: box 旧
 ### transform 闪烁
 
 闪烁归根结底是帧率不足，可通过开启硬件加速解决，使用
+
 ```css
   transform: transform3d(0, 0, 0);
   transform-style: preserve-3d;
@@ -177,6 +182,7 @@ iOS 8.1 支持 type 类型有 date、time、month，不支持 week、datetime、
 使用iconfont：http://emojisymbols.com/
 
 ### 段落 underline
+
 ```css
 p {
   line-height: 25px;
@@ -192,6 +198,7 @@ p {
 设置 document 根元素的 font-size，其他元素的宽高使用 rem 单位进行布局。
 
 以 320px 屏幕宽度为标准宽度举例：
+
 ``` js
   (function(doc, win) {
     'use strict';
@@ -212,9 +219,11 @@ p {
 ### border-radius
 
 「/」（斜杠）标签
+
 ```css
   border-raduis: 35px 25px 30px 20px / 25px 35px 20px 20px;
 ```
+
 「/」前定义 x 轴半径，「/」后定义 y 轴半径。
 
 
